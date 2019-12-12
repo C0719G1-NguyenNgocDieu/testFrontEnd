@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, NgForm} from '@angular/forms';
+import {RichtextService} from './richtext.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'richtext';
+  public insertImageSettings = {
+    saveUrl : `http://localhost:8080/upload`
+  };
+  onSubmit(form: NgForm): void {
+    alert(form.value.name);
+  }
 }
